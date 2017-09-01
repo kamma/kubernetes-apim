@@ -26,10 +26,10 @@ RUN mkdir -p ${USER_HOME}/scripts \
 	&& cat ${USER_HOME}/init.sh > ${USER_HOME}/scripts/init.sh \
 	&& chmod 0755 ${USER_HOME}/scripts/init.sh \
 	&& chown -R ${USER} /etc/ssh \
-#	&& touch /var/run/rsyslogd.pid \
-#	&& chown ${USER} /var/run/rsyslogd.pid \
-#	&& touch /var/log/auth.log \
-#	&& chown ${USER} /var/log/auth.log \
+	&& touch /var/run/rsyslogd.pid \
+	&& chown ${USER} /var/run/rsyslogd.pid \
+	&& touch /var/log/auth.log \
+	&& chown ${USER} /var/log/auth.log \
 	&& mkdir -p ${USER_HOME}/.ssh \
 	&& mkdir -p ${APIM_ARTIFACTS_LOCATION}/ \
 	&& chmod 0774 ${APIM_ARTIFACTS_LOCATION}/ \

@@ -9,6 +9,8 @@ ARG LOCAL_ARTIFACTS_LOCATION=${USER_HOME}/apim-artifacts
 ARG REMOTE_HOST=localhost
 ARG REMOTE_ARTIFACTS_LOCATION=${USER_HOME}/apim-artifacts
 
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
         telnet \
@@ -23,7 +25,7 @@ COPY id_rsa run.sh ${USER_HOME}/
 RUN mkdir -p ${USER_HOME}/.ssh \
         && mv ${USER_HOME}/id_rsa ${USER_HOME}/.ssh/ \
 	&& mkdir -p ${USER_HOME}/logs/ \
-	# && touch ${USER_HOME}/logs/artifact-sync.log \
+	&& touch ${USER_HOME}/logs/artifact-sync.log \
 	&& ln -sf /dev/stdout ${USER_HOME}/logs/artifact-sync.log \
 	&& chown ${USER} ${USER_HOME}/logs/artifact-sync.log \
         && mkdir -p ${USER_HOME}/scripts/ \
