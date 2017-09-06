@@ -52,7 +52,7 @@ metadata:
     pattern: wso2apim-pattern-1
 spec:
   capacity:
-    storage: 20Gi
+    storage: 4Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete

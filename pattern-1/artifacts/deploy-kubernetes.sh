@@ -3,31 +3,35 @@
 # service account
 kubectl create serviceaccount wso2svcacct
 
+# volume
+echo 'deploying volume ...'
+kubectl apply -f volume/persistent-volumes.yaml
+
 # databases
 echo 'deploying databases ...'
-kubectl create -f rdbms/rdbms-persistent-volume-claim.yaml
-kubectl create -f rdbms/rdbms-service.yaml
-kubectl create -f rdbms/rdbms-deployment.yaml
+kubectl apply -f rdbms/rdbms-persistent-volume-claim.yaml
+kubectl apply -f rdbms/rdbms-service.yaml
+kubectl apply -f rdbms/rdbms-deployment.yaml
 
-sleep 20s
+sleep 5s
 # analytics
 echo 'deploying apim analytics ...'
-kubectl create -f apim-analytics/wso2apim-analytics-service.yaml
-kubectl create -f apim-analytics/wso2apim-analytics-1-service.yaml
-kubectl create -f apim-analytics/wso2apim-analytics-2-service.yaml
-kubectl create -f apim-analytics/wso2apim-analytics-1-deployment.yaml
-sleep 30s
-kubectl create -f apim-analytics/wso2apim-analytics-2-deployment.yaml
+kubectl apply -f apim-analytics/wso2apim-analytics-service.yaml
+kubectl apply -f apim-analytics/wso2apim-analytics-1-service.yaml
+kubectl apply -f apim-analytics/wso2apim-analytics-2-service.yaml
+kubectl apply -f apim-analytics/wso2apim-analytics-1-deployment.yaml
+sleep 5s
+kubectl apply -f apim-analytics/wso2apim-analytics-2-deployment.yaml
 
-sleep 1m
+sleep 5s
 # apim
-kubectl create -f apim/wso2apim-mgt-volume-claim.yaml
-kubectl create -f apim/wso2apim-worker-volume-claim.yaml
-kubectl create -f apim/wso2apim-service.yaml
-kubectl create -f apim/wso2apim-manager-worker-service.yaml
-kubectl create -f apim/wso2apim-worker-service.yaml
+kubectl apply -f apim/wso2apim-mgt-volume-claim.yaml
+kubectl apply -f apim/wso2apim-worker-volume-claim.yaml
+kubectl apply -f apim/wso2apim-service.yaml
+kubectl apply -f apim/wso2apim-manager-worker-service.yaml
+kubectl apply -f apim/wso2apim-worker-service.yaml
 echo 'deploying apim manager-worker ...'
-kubectl create -f apim/wso2apim-manager-worker-deployment.yaml
-sleep 1m
+kubectl apply -f apim/wso2apim-manager-worker-deployment.yaml
+sleep 5s
 echo 'deploying apim worker ...'
-kubectl create -f apim/wso2apim-worker-deployment.yaml
+kubectl apply -f apim/wso2apim-worker-deployment.yaml
