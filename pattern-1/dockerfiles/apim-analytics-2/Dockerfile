@@ -1,4 +1,4 @@
-FROM wso2/wso2am-analytics:2.1.0
+FROM localhost:5000/wso2am-analytics
 
 ARG USER=wso2user
 ARG USER_HOME=/home/${USER}

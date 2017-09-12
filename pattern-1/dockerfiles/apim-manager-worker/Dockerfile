@@ -1,4 +1,4 @@
-FROM wso2/wso2am:2.1.0
+FROM localhost:5000/wso2am
 
 ARG USER=wso2user
 
