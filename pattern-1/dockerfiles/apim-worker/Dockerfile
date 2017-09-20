@@ -1,13 +1,9 @@
-FROM localhost:5000/wso2am
+FROM kammacz/wso2am:2.1.0
 
 ARG USER=wso2user
 
 COPY carbon/ /home/${USER}/tmp/carbon/
-COPY artifacts/mysql-connector-java-5.1.34.jar \
-        artifacts/dnsjava-2.1.8.jar \
-        /home/${USER}/wso2am-2.1.0/repository/components/lib/
-COPY artifacts/kubernetes-membership-scheme-1.0.0.jar \
-        /home/${USER}/wso2am-2.1.0/repository/components/dropins/
+COPY artifacts/lib/* ${USER_HOME}/wso2am-2.1.0/repository/components/lib/
 
 USER root
 RUN chown -R ${USER} /home/${USER}/
