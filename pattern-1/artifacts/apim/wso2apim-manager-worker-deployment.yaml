@@ -78,7 +78,7 @@ spec:
           name: apim-mgt-storage-volume
 
       -
-        image: kammacz/sshd:1.0.0
+        image: 10.201.152.1:5000/sshd:1.0.0
         name: wso2apim-sshd
         imagePullPolicy: Always
         ports:
