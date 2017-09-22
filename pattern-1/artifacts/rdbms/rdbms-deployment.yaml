@@ -30,9 +30,9 @@ spec:
         pattern: wso2apim-pattern-1
     spec:
       containers:
-      - image: kammacz/apim-rdbms-kubernetes:2.1.0
+      - image: 10.201.152.1:5000/apim-rdbms-kubernetes:2.1.0
         name: apim-rdbms
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         env:
           -
             name: MYSQL_ROOT_PASSWORD

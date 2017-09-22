@@ -37,7 +37,7 @@ spec:
 
       containers:
       -
-        image: kammacz/wso2am-manager-worker-pattern-1:2.1.0
+        image: 10.201.152.1:5000/wso2am-manager-worker-pattern-1:2.1.0
         name: wso2apim
         imagePullPolicy: Always
         ports:
