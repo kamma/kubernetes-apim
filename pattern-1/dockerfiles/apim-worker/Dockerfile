@@ -1,4 +1,4 @@
-FROM 10.201.152.1:5000/wso2am:2.1.0
+FROM wso2am:2.1.0
 
 ARG USER=wso2user
 

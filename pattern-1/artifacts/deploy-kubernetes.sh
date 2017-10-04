@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#kubectl create namespace wso2
+
+# set namespace
+#kubectl config set-context $(kubectl config current-context) --namespace=wso2
+
 # service account
 kubectl create serviceaccount wso2svcacct
 
@@ -13,7 +18,6 @@ kubectl apply -f rdbms/rdbms-persistent-volume-claim.yaml
 kubectl apply -f rdbms/rdbms-service.yaml
 kubectl apply -f rdbms/rdbms-deployment.yaml
 
-sleep 30s
 # analytics
 echo 'deploying apim analytics ...'
 kubectl apply -f apim-analytics/wso2apim-analytics-service.yaml
