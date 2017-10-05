@@ -1,0 +1,53 @@
+<datasources-configuration>
+
+    <providers>
+        <provider>org.wso2.carbon.ndatasource.rdbms.RDBMSDataSourceReader</provider>
+        <!--<provider>org.wso2.carbon.datasource.reader.hadoop.HBaseDataSourceReader</provider>-->
+        <!--<provider>org.wso2.carbon.datasource.reader.cassandra.CassandraDataSourceReader</provider>-->
+    </providers>
+
+    <datasources>
+
+        <datasource>
+            <name>WSO2_ANALYTICS_EVENT_STORE_DB</name>
+            <description>The datasource used for analytics record store</description>
+            <definition type="RDBMS">
+                <configuration>
+                    <url>jjdbc:oracle:thin:@10.201.152.1:49161/xe</url>
+                    <username>wso2stats</username>
+                    <password>Passw0rd</password>
+                    <driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+                    <maxActive>80</maxActive>
+                    <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
+                    <testOnBorrow>true</testOnBorrow>
+                    <validationQuery>SELECT 1 FROM DUAL</validationQuery>
+                    <validationInterval>30000</validationInterval>
+                    <defaultTransactionIsolation>READ_COMMITTED</defaultTransactionIsolation>
+                </configuration>
+            </definition>
+        </datasource>
+
+        <datasource>
+            <name>WSO2_ANALYTICS_PROCESSED_DATA_STORE_DB</name>
+            <description>The datasource used for analytics record store</description>
+            <definition type="RDBMS">
+                <configuration>
+                    <url>jdbc:oracle:thin:@10.201.152.1:49161/xe</url>
+                    <username>wso2stats</username>
+                    <password>Passw0rd</password>
+                    <driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+                    <maxActive>80</maxActive>
+                    <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
+                    <testOnBorrow>true</testOnBorrow>
+                    <validationQuery>SELECT 1 FROM DUAL</validationQuery>
+                    <validationInterval>30000</validationInterval>
+                    <defaultTransactionIsolation>READ_COMMITTED</defaultTransactionIsolation>
+                </configuration>
+            </definition>
+        </datasource>
+
+    </datasources>
+
+</datasources-configuration>
