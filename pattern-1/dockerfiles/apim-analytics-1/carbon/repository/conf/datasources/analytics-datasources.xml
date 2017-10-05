@@ -13,17 +13,17 @@
             <description>The datasource used for analytics record store</description>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:oracle:thin:@10.201.152.1:49161/xe</url>
-                    <username>wso2stats</username>
-                    <password>Passw0rd</password>
-                    <driverClassName>oracle.jdbc.driver.OracleDriver</driverClassName>
+                    <url>jdbc:mysql://apim-rdbms:3306/statdb?autoReconnect=true&amp;relaxAutoCommit=true</url>
+                    <username>root</username>
+                    <password>root</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
+                    <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
+                    <validationInterval>30000</validationInterval>
                     <defaultAutoCommit>false</defaultAutoCommit>
-                    <initialSize>0</initialSize>
-                    <testWhileIdle>true</testWhileIdle>
-                    <minEvictableIdleTimeMillis>4000</minEvictableIdleTimeMillis>
+                    <defaultTransactionIsolation>READ_COMMITTED</defaultTransactionIsolation>
                 </configuration>
             </definition>
         </datasource>
