@@ -13,7 +13,7 @@
             <description>The datasource used for analytics record store</description>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jjdbc:oracle:thin:@10.201.152.1:49161/xe</url>
+                    <url>jdbc:oracle:thin:@10.201.152.1:49161/xe</url>
                     <username>wso2stats</username>
                     <password>Passw0rd</password>
                     <driverClassName>oracle.jdbc.OracleDriver</driverClassName>
