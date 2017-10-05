@@ -99,11 +99,11 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:mysql://apim-rdbms:3306/statdb?autoReconnect=true&amp;relaxAutoCommit=true</url>
-                    <username>root</username>
-                    <password>root</password>
-                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:oracle:thin:@10.201.152.1:49161/xe</url>
+                    <username>wso2stats</username>
+                    <password>Passw0rd</password>
+                    <driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+                    <maxActive>80</maxActive>
                     <maxWait>60000</maxWait>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
