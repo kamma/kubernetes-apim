@@ -20,10 +20,13 @@ metadata:
     app: apim-rdbms
     pattern: wso2apim-pattern-1
 spec:
+  type: NodePort
   ports:
-    - port: 3306
+    - name: "mysql-tcp"
+      port: 3306
+      targetPort: 3306
+      nodePort: 30306
   selector:
     app: apim-rdbms
     tier: apim-rdbms
     pattern: wso2apim-pattern-1
-  clusterIP: None
